@@ -155,9 +155,9 @@ class LongTimeProcessingEcoacousticTools:
 
         for file_name in file_list:
             # Check if the file is a spectrogram file
-            if file_name.startswith("DailyPSD_") and file_name.endswith(extension):
+            if file_name.startswith("DailyMSP_") and file_name.endswith(extension):
                 # Extract the date from the file name
-                # Format of file name -> DailyPSD_<YEAR>.<MONTH>.<DAY>.extension
+                # Format of file name -> DailyMSP_<YEAR>.<MONTH>.<DAY>.extension
                 # Assume the file name format is consistent
                 date_str = file_name[9:19]
 
