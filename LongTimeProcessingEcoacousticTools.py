@@ -19,7 +19,7 @@ NFFT = 2048
 NPERSEG = (NFFT/2) + 1
 
 
-class LongTimeProcessingEcoacousticTools:
+class Tools:
 
     def generate_pxx_file(filepath, filename, extension, results_path):
         # Create the results directory if it doesn't exist
