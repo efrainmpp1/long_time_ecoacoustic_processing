@@ -8,6 +8,9 @@ LongTimeProcessingEcoacousticTools.Tools.generate_daily_spectrogram_images(
 LongTimeProcessingEcoacousticTools.Tools.generate_weekly_pxx(
     daily_pxx_folder, './results/WeeklyPxx/', 'mat')
 
+LongTimeProcessingEcoacousticTools.Tools.generate_weekly_spectrogram_images(
+    './results/Daily', './results/WeeklySpectograms', 'mat')
+
 LongTimeProcessingEcoacousticTools.Tools.generate_daily_msp(
     daily_pxx_folder, './results/DailyMSP/100_to_1500Hz', 'mat', freq_min=100, freq_max=1500)
 
