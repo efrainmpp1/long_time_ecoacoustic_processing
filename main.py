@@ -1,6 +1,6 @@
 import LongTimeProcessingEcoacousticTools
 
-daily_pxx_folder = '../results/Results_of_Ignacio/Daily'
+daily_pxx_folder = './results/Daily'
 
 LongTimeProcessingEcoacousticTools.Tools.generate_daily_spectrogram_images(
     daily_pxx_folder, './results/DailySpectograms', 'mat')
