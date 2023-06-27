@@ -253,7 +253,6 @@ class Tools:
             output_file_path = os.path.join(output_folder, output_file_name)
             
             plt.savefig(output_file_path)
-            plt.show()
             plt.close()
 
 
