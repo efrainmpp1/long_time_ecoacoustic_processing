@@ -273,7 +273,7 @@ class Tools:
                 # Extract the date from the file name
                 # Format of file name -> DailyPxx_<YEAR><MONTH><DAY>.extension
                 # Assume the file name format is consistent
-                date_str = file_name[9:17]
+                date_str = file_name[9:19]
 
                 # Open the HDF5 file
                 file_path = os.path.join(folder_path, file_name)
