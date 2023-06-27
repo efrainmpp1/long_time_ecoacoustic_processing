@@ -214,13 +214,13 @@ class Tools:
         with h5py.File(output_file_path, "w") as file:
             file.create_dataset("fb_spl", data=interpolated_fbspl)
 
-    def generate_long_time_fb_spl_gram(folder_path, output_folder, extension , title):
+    def generate_long_time_fb_spl_gram(folder_path, output_folder, extension, title):
         # Create the output folder if it doesn't exist
         os.makedirs(output_folder, exist_ok=True)
 
-         # Get the list of daily files sorted by name
+        # Get the list of daily files sorted by name
         fb_files = sorted(file for file in os.listdir(
-        folder_path) if file.startswith("FbSPL") and file.endswith(extension))
+            folder_path) if file.startswith("FbSPL") and file.endswith(extension))
 
         for file_name in fb_files:
 
@@ -230,17 +230,16 @@ class Tools:
                 fb_spl = file["fb_spl"][:]
 
             hours_day = np.linspace(0, 24, fb_spl.shape[0])
-            time = np.linspace(0,29,fb_spl.shape[1])
-            xticks = np.arange(1,len(fb_files))
+            time = np.linspace(0, 29, fb_spl.shape[1])
+            xticks = np.arange(1, len(fb_files))
             plt.figure(figsize=(10, 6))
-
 
             # Plot the matrix using pcolormesh
             plt.pcolormesh(time, hours_day, np.log10(fb_spl), cmap='jet')
 
             # Add a color bar
             plt.colorbar()
-            #plt.clim(1.87,1.92)
+            # plt.clim(1.87,1.92)
 
             plt.title(f'{title}')
             plt.yticks(np.arange(1, 25))
@@ -248,13 +247,12 @@ class Tools:
             # Add labels to the axes
             plt.xlabel('Days')
             plt.ylabel('Hours of day (h)')
-            
+
             output_file_name = "FbSPL_Gram.jpg"
             output_file_path = os.path.join(output_folder, output_file_name)
-            
+
             plt.savefig(output_file_path)
             plt.close()
-
 
     def generate_daily_spectrogram_images(folder_path, output_folder, extension):
         # Create the output folder if it doesn't exist
@@ -326,6 +324,7 @@ class Tools:
 
             if i % 7 == 0:
                 first_day = date_str
+                weekly_pxx = None  # Reset the weekly matrix
 
             try:
                 # Get the full file path
@@ -340,8 +339,13 @@ class Tools:
                 else:
                     weekly_pxx = np.concatenate((weekly_pxx, pxx), axis=1)
 
-                if i % 7 == 6 or i == len(daily_files) - 1:
-                    last_day = date_str
+            except ValueError:
+                print(f"Ignored invalid file: {file_name}")
+
+            if (i + 1) % 7 == 0 or i == len(daily_files) - 1:
+                last_day = date_str
+
+                if (i + 1) % 7 == 0:
                     # Save the weekly matrix to a new file
                     weekly_file_name = f"WeeklyPxx_{first_day}_to_{last_day}.{extension}"
                     weekly_file_path = os.path.join(
@@ -351,10 +355,6 @@ class Tools:
                         file.create_dataset("Pxx", data=weekly_pxx)
 
                     print(f"Saved weekly file: {weekly_file_name}")
-                    weekly_pxx = None
-
-            except ValueError:
-                print(f"Ignored invalid file: {file_name}")
 
         print("Concatenation completed.")
 
@@ -404,5 +404,3 @@ class Tools:
 
                 plt.savefig(output_file_path)
                 plt.close()
-
-    
