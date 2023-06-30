@@ -4,10 +4,13 @@ Generates a Pxx file.
 
 ### Parameters:
 
-- `filepath` (string): The path of the input file.
+- `filepath` (string): The path of the input audio file in the format <year><month><day>_<hour><minute><second>.extension.
 - `filename` (string): The name of the output file.
 - `extension` (string): The file extension.
 - `results_path` (string): The path to save the output file.
+
+#### Output:
+The function returns a Pxx matrix with (NFFT/2) + 1 rows and the number of minutes as columns. The generated file is saved as Pxx_{filename}.{extension}.
 
 ## Function: create_daily_pxx(folder_path, output_folder, extension)
 
