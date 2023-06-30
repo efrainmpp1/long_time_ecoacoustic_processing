@@ -13,7 +13,7 @@ provided sample files to test the `main.py` code, which calls some methods to ex
 
 After cloning the repository to your machine:
 - Download the `Daily` folder containing the DailyPxx files [here]()
-- Create a folder named `results` in the root of the repository
+- Create a folder named `results` in the root of the repository (run ```mkdir results```)
 - Add the `Daily` folder to the `results` folder
 
   **Creating a virtual environment**
