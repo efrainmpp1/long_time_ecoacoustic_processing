@@ -12,9 +12,13 @@ provided sample files to test the `main.py` code, which calls some methods to ex
 ## How to Run the main.py Code
 
 After cloning the repository to your machine:
-- Download the `Daily` folder containing the DailyPxx files [here]()
+- Download the `Daily.zip` containing the DailyPxx files [here](https://drive.google.com/file/d/1SnazIVhA-VNoZ0E7fodjsUvcLZb3mOYL/view?usp=sharing)
 - Create a folder named `results` in the root of the repository (run ```mkdir results```)
-- Add the `Daily` folder to the `results` folder
+- Prepare the input data:
+  1. Extract the Daily folder of the `Daily.zip` file.
+  2. Locate the extracted `Daily` folder.
+  3. Move the `Daily` folder to the `results` folder in the project directory.
+
 
   **Creating a virtual environment**
     - If you don't have the `virtualenv` package installed for Python, run `pip install virtualenv`
