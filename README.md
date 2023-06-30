@@ -1,11 +1,15 @@
 # Long Time Ecoacoustic Processing Tools
 
-The Long Time Ecoacoustic Processing Tools repository is a collection of code and tools for processing and analyzing ecoacoustic data over long time durations.
+The Long Time Ecoacoustic Processing Tools repository is a collection of code and tools for processing and analyzing 
+ecoacoustic data over long time durations.To access the documentation for the developed tools, 
+please click [here](./docs/tools.md). In case you don't have files to use with the tools in this repository, we have 
+provided sample files to test the `main.py` code, which calls some methods to execute and generate results. Refer to the 
+**How to Run the main.py Code** section for more details.
 
 ## Requirements
 - Python 3.9.x or higher installed
 
-## How to Run the Code
+## How to Run the main.py Code
 
 After cloning the repository to your machine:
 - Download the `Daily` folder containing the DailyPxx files [here]()
